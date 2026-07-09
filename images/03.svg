@@ -1,0 +1,105 @@
+<svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono','Courier New',monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="340" fill="#f0ede6"/>
+
+  <text x="390" y="22" text-anchor="middle" font-size="9" fill="#666" letter-spacing="1.2" font-weight="500">ELECTRICAL ARCHITECTURE — P1 BREADBOARD</text>
+
+  <!-- ═══ POWER SUPPLY (LiPo) ═══ -->
+  <rect x="20" y="110" width="108" height="68" rx="2" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="74" y="131" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">POWER</text>
+  <text x="74" y="150" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="500">3.7V LiPo</text>
+  <text x="74" y="167" text-anchor="middle" font-size="9" fill="#666">150–400 mAh</text>
+
+  <!-- LiPo → MCU wire -->
+  <line x1="128" y1="144" x2="186" y2="144" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="157" y="138" text-anchor="middle" font-size="8" fill="#666">VCC</text>
+
+  <!-- ═══ MCU ═══ -->
+  <rect x="186" y="78" width="164" height="132" rx="2" fill="#e8e5dd" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="268" y="101" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">MICROCONTROLLER</text>
+  <text x="268" y="121" text-anchor="middle" font-size="11.5" fill="#1a1a1a" font-weight="500">XIAO nRF52840</text>
+  <text x="268" y="138" text-anchor="middle" font-size="9" fill="#666">21 × 17.5 mm</text>
+  <!-- BLE antenna symbol -->
+  <text x="268" y="157" text-anchor="middle" font-size="9" fill="#666">BLE 5.0  |  I2C  |  GPIO</text>
+  <!-- Port labels on right edge -->
+  <text x="344" y="123" font-size="8" fill="#666">I2C→</text>
+  <text x="344" y="195" font-size="8" fill="#666">GPIO↓</text>
+
+  <!-- ═══ I2C BUS ═══ -->
+  <!-- Horizontal bus line from MCU right to IMU junction -->
+  <line x1="350" y1="115" x2="460" y2="115" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- Bus label -->
+  <text x="404" y="108" text-anchor="middle" font-size="8.5" fill="#666">I2C  SDA / SCL</text>
+
+  <!-- Branch to IMU1 (up) -->
+  <line x1="460" y1="115" x2="460" y2="88" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="460" y1="88" x2="500" y2="88" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Branch to IMU2 (down) -->
+  <line x1="460" y1="115" x2="460" y2="175" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="460" y1="175" x2="500" y2="175" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- I2C junction dot -->
+  <circle cx="460" cy="115" r="3" fill="#1a1a1a"/>
+
+  <!-- ═══ IMU 1 (MPU-6050, 0x68) ═══ -->
+  <rect x="500" y="58" width="258" height="60" rx="2" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="629" y="76" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">INERTIAL MEASUREMENT UNIT — T2</text>
+  <text x="629" y="94" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="500">MPU-6050</text>
+  <text x="629" y="110" text-anchor="middle" font-size="9" fill="#666">AD0 = LOW  →  addr 0x68  (reference)</text>
+
+  <!-- ═══ IMU 2 (MPU-6050, 0x69) ═══ -->
+  <rect x="500" y="146" width="258" height="60" rx="2" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="629" y="164" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">INERTIAL MEASUREMENT UNIT — T6</text>
+  <text x="629" y="182" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="500">MPU-6050</text>
+  <text x="629" y="198" text-anchor="middle" font-size="9" fill="#666">AD0 = HIGH  →  addr 0x69  (measurement)</text>
+
+  <!-- ═══ MOTOR DRIVE PATH ═══ -->
+  <!-- GPIO line down from MCU bottom -->
+  <line x1="268" y1="210" x2="268" y2="248" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="276" y="232" font-size="8.5" fill="#666">GPIO (PWM)</text>
+
+  <!-- Resistor symbol inline -->
+  <!-- Horizontal line from (268,248) → resistor → transistor block -->
+  <line x1="268" y1="248" x2="310" y2="248" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- Resistor box -->
+  <rect x="310" y="241" width="32" height="14" rx="1" fill="#f0ede6" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="326" y="252" text-anchor="middle" font-size="8" fill="#1a1a1a">1kΩ</text>
+  <!-- Line to transistor -->
+  <line x1="342" y1="248" x2="368" y2="248" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── 2N2222 NPN + 1N4148 block ── -->
+  <rect x="368" y="228" width="148" height="60" rx="2" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="442" y="247" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">MOTOR DRIVE</text>
+  <text x="442" y="264" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="500">2N2222 NPN</text>
+  <text x="442" y="279" text-anchor="middle" font-size="9" fill="#666">+ 1N4148 flyback diode</text>
+
+  <!-- Motor drive → motor -->
+  <line x1="516" y1="258" x2="554" y2="258" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Coin Motor ── -->
+  <rect x="554" y="228" width="200" height="60" rx="2" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="654" y="247" text-anchor="middle" font-size="9" fill="#666" letter-spacing="0.5">HAPTIC ACTUATOR</text>
+  <text x="654" y="264" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="500">Coin Motor  3V</text>
+  <text x="654" y="279" text-anchor="middle" font-size="9" fill="#666">10 mm dia  |  low-audibility</text>
+
+  <!-- GND rail (bottom) -->
+  <line x1="20" y1="315" x2="760" y2="315" stroke="#c8c4bc" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="24" y="310" font-size="8.5" fill="#999">GND</text>
+
+  <!-- GND drops -->
+  <line x1="74" y1="178" x2="74" y2="315"  stroke="#c8c4bc" stroke-width="1"/>
+  <line x1="268" y1="210" x2="268" y2="315" stroke="#c8c4bc" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="442" y1="288" x2="442" y2="315" stroke="#c8c4bc" stroke-width="1"/>
+
+  <!-- VCC to motor (from battery rail) -->
+  <line x1="74" y1="110" x2="74" y2="42" stroke="#c8c4bc" stroke-width="1"/>
+  <line x1="74" y1="42" x2="654" y2="42" stroke="#c8c4bc" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="390" y="37" text-anchor="middle" font-size="8.5" fill="#999">VCC rail</text>
+  <line x1="654" y1="42" x2="654" y2="228" stroke="#c8c4bc" stroke-width="1"/>
+</svg>

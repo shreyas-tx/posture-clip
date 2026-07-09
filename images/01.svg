@@ -1,0 +1,63 @@
+<svg viewBox="0 0 780 282" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono','Courier New',monospace">
+  <rect width="780" height="282" fill="#f0ede6"/>
+
+  <!-- Title -->
+  <text x="390" y="26" text-anchor="middle" font-size="10" fill="#666" letter-spacing="1.2" font-weight="500">UPRIGHT GO — COMPETITIVE FAILURE AUDIT</text>
+
+  <!-- ── Card 1: False Positives (x 16–244) ── -->
+  <rect x="16" y="40" width="228" height="226" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <rect x="16" y="40" width="228" height="30" fill="#c8c4bc"/>
+  <text x="130" y="60" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="500">FALSE POSITIVES</text>
+
+  <text x="30" y="90"  font-size="9" fill="#666" letter-spacing="1">ROOT CAUSE</text>
+  <text x="30" y="107" font-size="10.5" fill="#1a1a1a">Single IMU — cannot</text>
+  <text x="30" y="122" font-size="10.5" fill="#1a1a1a">distinguish slouch</text>
+  <text x="30" y="137" font-size="10.5" fill="#1a1a1a">from forward body lean</text>
+
+  <line x1="16" y1="154" x2="244" y2="154" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="130" y="174" text-anchor="middle" font-size="14" fill="#c8c4bc">↓</text>
+
+  <text x="30" y="196" font-size="9" fill="#666" letter-spacing="1">DESIGN RESPONSE</text>
+  <text x="30" y="213" font-size="10.5" fill="#1a1a1a">Dual IMU differential</text>
+  <text x="30" y="228" font-size="10.5" fill="#1a1a1a">sensing — T2 reference,</text>
+  <text x="30" y="243" font-size="10.5" fill="#1a1a1a">T6 measurement.</text>
+  <text x="30" y="258" font-size="10.5" fill="#1a1a1a">Only θ_diff triggers alert</text>
+
+  <!-- ── Card 2: Alert Fatigue (x 276–504) ── -->
+  <rect x="276" y="40" width="228" height="226" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <rect x="276" y="40" width="228" height="30" fill="#c8c4bc"/>
+  <text x="390" y="60" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="500">ALERT FATIGUE</text>
+
+  <text x="290" y="90"  font-size="9" fill="#666" letter-spacing="1">ROOT CAUSE</text>
+  <text x="290" y="107" font-size="10.5" fill="#1a1a1a">Fixed threshold + fixed</text>
+  <text x="290" y="122" font-size="10.5" fill="#1a1a1a">alert frequency = constant</text>
+  <text x="290" y="137" font-size="10.5" fill="#1a1a1a">buzzing → desensitization</text>
+
+  <line x1="276" y1="154" x2="504" y2="154" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="390" y="174" text-anchor="middle" font-size="14" fill="#c8c4bc">↓</text>
+
+  <text x="290" y="196" font-size="9" fill="#666" letter-spacing="1">DESIGN RESPONSE</text>
+  <text x="290" y="213" font-size="10.5" fill="#1a1a1a">3-phase adaptive algo:</text>
+  <text x="290" y="228" font-size="10.5" fill="#1a1a1a">threshold + grace period</text>
+  <text x="290" y="243" font-size="10.5" fill="#1a1a1a">evolve as posture</text>
+  <text x="290" y="258" font-size="10.5" fill="#1a1a1a">improves over session</text>
+
+  <!-- ── Card 3: Adhesive (x 536–764) ── -->
+  <rect x="536" y="40" width="228" height="226" fill="#e8e5dd" stroke="#c8c4bc" stroke-width="1"/>
+  <rect x="536" y="40" width="228" height="30" fill="#c8c4bc"/>
+  <text x="650" y="60" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="500">ADHESIVE ATTACHMENT</text>
+
+  <text x="550" y="90"  font-size="9" fill="#666" letter-spacing="1">ROOT CAUSE</text>
+  <text x="550" y="107" font-size="10.5" fill="#1a1a1a">Skin adhesive degrades</text>
+  <text x="550" y="122" font-size="10.5" fill="#1a1a1a">with sweat; requires</text>
+  <text x="550" y="137" font-size="10.5" fill="#1a1a1a">skin access under shirts</text>
+
+  <line x1="536" y1="154" x2="764" y2="154" stroke="#c8c4bc" stroke-width="1"/>
+  <text x="650" y="174" text-anchor="middle" font-size="14" fill="#c8c4bc">↓</text>
+
+  <text x="550" y="196" font-size="9" fill="#666" letter-spacing="1">DESIGN RESPONSE</text>
+  <text x="550" y="213" font-size="10.5" fill="#1a1a1a">Cantilevered spring clip</text>
+  <text x="550" y="228" font-size="10.5" fill="#1a1a1a">grips fabric perp. to</text>
+  <text x="550" y="243" font-size="10.5" fill="#1a1a1a">spine axis — no skin</text>
+  <text x="550" y="258" font-size="10.5" fill="#1a1a1a">contact required</text>
+</svg>
